@@ -29,6 +29,9 @@ target
 # logback
 logback.out.xml
 
+
+*.properties
+
 backend/src/main/resources/public/
 backend/target
 
