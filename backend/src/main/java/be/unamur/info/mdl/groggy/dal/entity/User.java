@@ -10,19 +10,27 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String name;
 
     private String email;
 
 
+    protected User() {}
 
-	public Integer id() {
+    public User(String name, String email) {
+    	this.name(name);
+    	this.email(email);
+	}
+
+
+
+	public Long id() {
 		return id;
 	}
 
-	public void id(Integer id) {
+	public void id(Long id) {
 		this.id = id;
 	}
 
@@ -43,4 +51,8 @@ public class User {
 	}
 
 
+	@Override
+	public String toString() {
+		return String.format("User[id=%d, name='%s', email='%s']", id, name, email);
+	}
 }
