@@ -21,5 +21,23 @@ node {
   stage('Archive') {
     junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
   }
+  
+  stage('Deliver for development') {
+      when {
+          branch 'develop'
+      }
+      steps {
+          sh 'echo "Develop branch - new features added "'
+      }
+  }
+  stage('Deploy for production') {
+      when {
+          branch 'master'
+      }
+      steps {
+          sh 'echo "Master branch - new version released "'
+      }
+  }
+}
 
 }
