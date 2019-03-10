@@ -6,6 +6,7 @@ node {
 
   stage('Checkout') {
     git 'https://github.com/kadegnon/mdl-spring-boot-starter'
+    sh "chmod +x ./mvnw .mvn/wrapper"
   }
   
   
