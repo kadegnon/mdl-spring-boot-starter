@@ -30,6 +30,7 @@ node {
           sh 'echo "Develop branch - new features added "'
       }
   }
+  
   stage('Deploy for production') {
       when {
           branch 'master'
@@ -38,6 +39,5 @@ node {
           sh 'echo "Master branch - new version released "'
       }
   }
-}
 
 }
