@@ -7,11 +7,16 @@ node {
   stage('Checkout') {
     git 'https://github.com/kadegnon/mdl-spring-boot-starter'
   }
-
-  stage('Build') {
-    sh 'mvn -B -V -U -e clean package test'
+  
+  
+  stage('Install') {
+    sh "./mvnw clean install -DskipTests"
   }
 
+  stage('Tests') {
+    sh "./mvnw test"
+  }
+  
   stage('Archive') {
     junit allowEmptyResults: true, testResults: '**/target/**/TEST*.xml'
   }
