@@ -16,7 +16,7 @@ node {
   }
 
   stage('Tests') {
-    sh "./mvnw --projects backend test"
+    sh "./mvnw -e -X --projects backend test"
   }
   
   stage('Archive') {
