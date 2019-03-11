@@ -11,11 +11,11 @@ node {
   
   
   stage('Install') {
-    sh "./mvnw clean install -DskipTests"
+    sh "./mvnw --projects backend clean install -DskipTests"
   }
 
   stage('Tests') {
-    sh "./mvnw test"
+    sh "./mvnw --projects backend test"
   }
   
   stage('Archive') {
