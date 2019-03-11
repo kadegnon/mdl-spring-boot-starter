@@ -11,6 +11,7 @@ node {
   
   
   stage('Install') {
+    sh "./mvnw -v"
     sh "./mvnw --projects backend clean install -DskipTests"
   }
 
